@@ -20,3 +20,4 @@ var options = {
 
 var peerserver = ExpressPeerServer(server, options);
 app.use('/server', peerserver);
+console.log("Running on port " + port);
