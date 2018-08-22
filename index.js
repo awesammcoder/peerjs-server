@@ -1,3 +1,3 @@
 const PeerServer = require('peer').PeerServer;
-const server = PeerServer({port: 4000, path: '/server'});
-console.log("Running to port:" + 4000);
+const server = PeerServer({port: process.env.OPENSHIFT_NODEJS_PORT || 5000, path: '/server'});
+console.log("Running to port:" + process.env.OPENSHIFT_NODEJS_PORT || 5000);
