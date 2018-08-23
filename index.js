@@ -20,6 +20,15 @@ var options = {
 }
 
 var peerserver = ExpressPeerServer(server, options);
+peerserver.on('connection', function(id) {
+  console.log("Client connected " + id);
+});
+
+peerserver.on('disconnected', function(id) {
+  console.log("Client disconnected " + id);
+});
+
+
 app.use('/server', peerserver);
 
 console.log("Running on port " + port);
