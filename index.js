@@ -15,7 +15,8 @@ app.get('/', function(req, res, next) { res.json({
 
 var server = app.listen(port);
 var options = {
-    debug: true
+    debug: true,
+    proxied: true
 }
 
 var peerserver = ExpressPeerServer(server, options);
